@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+   <header>
+        <h1>PORTFOLIO</h1>
+        <p>Представляем портфолио прекрасного кандидата. Интересующая позиция: java-developer (junior)</p>
+   </header>
+
+   <nav>
+       <a href="portfolio_home.html">Home</a>
+       <a href="portfolio_portfolio.html">Portfolio</a>
+       <a href="portfolio_certificates.html">Certificates</a>
+       <a href="portfolio_about.html">About</a>
+       <a href="portfolio_contact.html">Contact</a>
+   </nav>
+
+   <div class="hero" id="hero">
+       <h1>CONTACT</h1>
+       <p>Способы связи со мной очень разнообразны.</p>
+       <p>Прошу ознакомиться и выбрать приемлемый.</p>
+   </div>
+
+   <div class="contact">
+
+        <div id="myEmail" onclick="mail()">email: francmariia@gmail.com</div>
+        <div id="myPhone" onclick="phone()">phone: +7 983 407 31 37</div>
+        <p style="font-style: italic; color: #8b8b8b;">UTC+8</p>
+   
+
+        <div id="modalWindow1" class="modal1">
+            <div class="modal-content1">
+                <div class="modal-header1">
+                <h2>Если хотите написать письмо, нажмите Ok!</h2>
+                </div>
+                <div class="modal-body1">
+                <p>Почта будет скопирована в буфер обмена</p>
+                </div>
+                <div class="modal-footer1">
+                    <button class="okButton1">Ok</button>
+                    <button class="closeButton1">Close</button>
+                </div>
+        </div>
+
+        <div id="modalWindow2" class="modal2">
+            <div class="modal-content2">
+                <div class="modal-header2">
+                <h2>Звонки будут проигнорированы, поэтому пишите!</h2>
+                </div>
+                <div class="modal-body2">
+                <p>Номер телефона скопирован в буфер обмена.</p>
+                </div>
+                <div class="modal-footer2">
+                    <button class="okButton2">Ok</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   <footer>
+    &copy; 2023 Creative portfoliO
+   </footer>
+
+   <script>
+
+    //EMAIL:
+    const myEmail  = document.getElementById('myEmail');
+    const modalWindow1 = document.getElementById('modalWindow1');
+    const closeButton1 = document.getElementsByClassName("closeButton1")[0];
+    const okButton1 = document.getElementsByClassName("okButton1")[0];
+
+    myEmail.addEventListener('mouseover', function() {
+        myEmail.style.backgroundColor = 'black';
+    });
+    myEmail.addEventListener('mouseout', function() {
+        myEmail.style.backgroundColor = '';
+    });
+
+    // var script1 = {
+    // myFunction: 
+    function mail () {
+        const myEmail1  = document.getElementById('myEmail');
+       
+        myEmail1.addEventListener('click', function() {
+            modalWindow1.style.display = "block";
+        }) 
+        okButton1.onclick = function() {
+            modalWindow1.style.display = "none";
+
+            const str = 'francmariia@gmail.com';
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+        closeButton1.onclick = function() {
+            modalWindow1.style.display = "none";
+        };
+    }
+// };
+
+</script>
+
+<script>
+    //PHONE: ???????????
+    
+    const myPhone  = document.getElementById('myPhone');
+    const modalWindow2 = document.getElementById('modalWindow2');
+    const okButton2 = document.getElementsByClassName("okButton2")[0];
+
+    myPhone.addEventListener('mouseover', function() {
+        myPhone.style.backgroundColor = 'black';
+    });
+    myPhone.addEventListener('mouseout', function() {
+        myPhone.style.backgroundColor = '';
+    });
+
+    // var script2 = {
+    //     myFunction: 
+        function phone () {
+        const myPhone2  = document.getElementById('myPhone');
+        myPhone2.addEventListener('click', function() {
+            modalWindow2.style.display = "block";
+        });
+        okButton2.onclick = function() {
+            modalWindow2.style.display = "none";
+
+            const str = '+79834073137';
+            const el = document.createElement('textarea');
+            el.value = str;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+}
+// };
+
+    //
+    window.onclick = function(event) {
+        if (event.target == modalWindow1) {
+             modalWindow1.style.display = "none";
+        }
+        if (event.target == modalWindow2) {
+            modalWindow2.style.display = "none";
+        }
+    };
+</script>
+
+</body>
+</html>

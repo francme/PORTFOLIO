@@ -1,0 +1,32 @@
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.project {
+    display: flex inline-block;
+    width: 28%;
+    background-color: #222;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    min-width: min-content;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.6);
+    width: 32%;
+    height:auto ;
+    transition: ease-out 1s;
+}
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+   <header>
+        <h1>PORTFOLIO</h1>
+        <p>Представляем портфолио прекрасного кандидата. Интересующая позиция: java-developer (junior)</p>
+   </header>
+
+   <nav>
+       <a href="portfolio_home.html">Home</a>
+       <a href="portfolio_portfolio.html">Portfolio</a>
+       <a href="portfolio_certificates.html">Certificates</a>
+       <a href="portfolio_about.html">About</a>
+       <a href="portfolio_contact.html">Contact</a>
+   </nav>
+
+   <div class="hero">
+        <h1>HOME</h1>
+        <p>Приветствую! Раздел HOME это главная страница, потому что здесь я прошу Вас рассказать немного о себе.</p>
+        <p>Сделать это не сложно: просто заполните форму ниже.</p>
+    </div>
+
+   <div class="home">
+    <div>
+        <p>* Есть обязательные для заполнения поля</p>
+    </div>
+        <div class="container">
+    
+            <form action="#" method="post" id="homeForm">
+    
+                <!-- <div class="registration-block">
+    
+                    <label for="username">Логин</label>
+                    <input type="text" id="username" name="username" placeholder="Введите логин" required>
+    
+                    <br>
+                    <label type="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+    
+                </div> -->
+    
+    
+                <div class="personal-info-block">
+                    <br>
+                    <label for="company">Какую организацию Вы представляете *</label>
+                    <input type="text" id="company" name="company" placeholder="Введите официальное наименование вашей организации" required>
+                    <br>
+                    <label for="position">Ваша должность *</label>
+                    <input type="text" id="position" name="position" placeholder="Введите должность" required>
+                    <br>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    <br>
+                    <label for="name">Как к Вам обращаться *</label>
+                    <input type="text" id="name" name="name" placeholder="Введите Вашу фамилию, имя или что угодно буквами" required>
+                    
+                    <br>
+                    <br>
+                    <label>Пол(не знаю зачем, просто интересно):</label>
+                    <br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Мужской</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Женский</label>
+                    <br>
+                    <!-- <br>
+                    <label for="birdthdate">Дата рождения (на всякий случай)</label>
+                    <input type="date" id="birdthdate" name="birdthdate" required> -->
+    
+                </div>
+
+                <div class="position-blok">
+                    <br>
+                    <label for="vacancy">На какую позицию Вы ищите сотрудника *</label>
+                    <input type="text" id="vacancy" name="vacancy" placeholder="Введите должность" required>
+                    <br>
+                    <label for="format">Укажите формат работы *</label>
+                    <input type="text" id="format" name="format" placeholder="Офис, удаленка, гибрид" required>
+      
+                    <!-- <br>
+                    <label style="color: white" for="salary">Что по бабкам, Лебовски? *</label>
+                    <input type="text" id="salary" name="salary" placeholder="Ваше предложение" required> -->
+                   
+
+                    <br>
+                    <label for="input__file">Прикрепите файл:</label>
+                    <input 
+                    type="file" 
+                    id="input__file"
+                    name="file" 
+                    accept=".jpg, .jpeg, .png, .doc, .docx, .xls, .xlsx, .txt, .zip, .7z, .7zip"
+                    multiple>
+
+                    <br>
+                    <input type="hidden" value="comment" name="comment">
+                    <textarea name="text">Здесь можно высказаться :)</textarea>
+                    <input type="submit" value="Отправить">
+                </div>
+    
+                <div class="subscription-block">
+                    <br>
+                    <span style="font-style: italic; font-size:large; color:white;">
+                        Мы почти закончили, еще пара моментов..
+                    </span>
+                    <br><br>
+                    <label>Подписка на уведомления о новых проектах:</label>
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                    <label for="subscribe">Да</label>
+    
+                    <br>
+                    <br>
+                    <input type="checkbox" id="agree" name="agree" value="yes">
+                    <label for="agree">Я согласен на все!</label>
+    
+                </div>
+
+                <div>
+                    <br>
+                    <input type="submit" value="Завершить и отправить">
+                    <p id="output"></p>
+    
+                </div>
+            </form>
+    
+        </div>
+   </div>
+  
+   <script>
+
+        const name = document.getElementById('name');
+        name.addEventListener("keyup", function(){
+            this.value = this.value.replace(/[^a-zA-Zа-яА-Я]+/g, "");
+        });
+      
+        const homeForm  = document.getElementById('homeForm');
+        const output  = document.getElementById('output');
+        homeForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            output.textContent = "Форма отправлена. Спасибо!";
+        });
+    </script>
+
+   <footer>
+    &copy; 2023 Creative portfoliO
+   </footer>
+  
+
+</body>
+</html>

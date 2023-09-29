@@ -1,0 +1,11 @@
+.about {
+    margin: auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    font-size: 20px;
+}
