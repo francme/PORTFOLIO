@@ -1,6 +1,6 @@
-# Portfolio
+# Portfolio  
 
-## Project for HTML5 training block
+## Project for HTML5 training block  
 
-#### Main start file - potfolio_home.html
+#### *Main start file - potfolio_home.html*
 
