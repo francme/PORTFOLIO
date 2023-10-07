@@ -22,28 +22,9 @@ form {
     flex-direction: column;
     text-align: left;
     color: #dfdfdf;
-}
-
-label {
-    margin-bottom: 50px;
-}
-
-input[type="text"],
-input[type="email"]
- {
-    font-family: inherit; 
-    font-size: inherit;
-    line-height: inherit; 
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 800px;
-    height: calc(1.5rem + 4px);
-    padding: 5px 10px;
-
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 20px;
-    background-color: #c0c0c0;
+    margin: 10px;
+    padding: 20px;
+    align-content: center;
 }
 
 input[type="text"]::placeholder,
@@ -81,13 +62,13 @@ input[type="file"]:hover {
     cursor: pointer;
     border-color:black;
     background-color: #8a8a8a;
-}
-
+} 
 
 textarea {
     font-family: inherit; 
     font-size: inherit;
     line-height: inherit; 
+    margin-top: 50px;
     margin-bottom: 5px;
     width: 100%;
     max-width: 800px;
@@ -105,25 +86,165 @@ textarea:hover {
     background-color: rgb(245, 245, 245);
   }
 
-input[type="submit"] {
-    font-family: inherit; 
-    font-size: inherit;
-    line-height: inherit; 
-    margin-bottom: 30px;
-
-    background-color:#ccc;
-    color:#474747 ;
-
-    font-size: 18px;
-    border: none;
-    border-radius: 2px;
+.button, button[type="submit"]  {
+    width: 100%;
+    height: max-content;
+    display: inline-block;
+    
+    padding: 30px;
+    background-color: #727272; 
+    color: white;
+    border: none; 
+    border-radius: 3px; 
+    font-size: 20px; 
     cursor: pointer;
-    transition: background-color ease-in 0.4s;
+    margin: 10px;
+    
+    outline: none;
+    position: relative;
+    z-index: 0;
+    line-height: 60px;
+    background: #000;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+.button span, button[type="submit"] span {
+    position: absolute;
+    display: block;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    text-align: center;
+    background: #0c0c0c;
+    color: rgba(255, 255, 255, 0.4);
+    transition: 0.5s;
+  }
+  
+  .button:hover span, 
+  button[type="submit"]:hover span {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .button span::before, 
+  button[type="submit"] span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+  
+  .button::before, 
+  button[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      #000000,
+      #3a3636,
+      #b6a4a4,
+      #e0c0c0,
+      #2b2a2a,
+      #f1e1e1,
+      #ffffff,
+      #bdbcbc,
+      #332c2c,
+      #574848,
+      #634a4a,
+      #201818
+    );
+    background-size: 400%;
+    opacity: 0;
+    transition: 3s;
+    animation: eff 20s linear infinite;
+  }
+  
+  .button:hover::before,
+  .button:hover::after,
+  button[type="submit"]:hover::before,
+  button[type="submit"]:hover::after {
+    opacity: 1;
+  }
+  
+  .button::after, 
+  button[type="submit"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      #000000,
+      #3a3636,
+      #b6a4a4,
+      #e0c0c0,
+      #2b2a2a,
+      #f1e1e1,
+      #ffffff,
+      #bdbcbc,
+      #332c2c,
+      #574848,
+      #634a4a,
+      #201818
+    );
+    background-size: 400%;
+    opacity: 0;
+    filter: blur(20px);
+    transition: 1s;
+    animation: eff 25s ease infinite;
+  }
+  
+  @keyframes eff {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  label {
+    display: block; 
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    color: #ffffff9a;
 }
 
-input[type="submit"]:hover {
-    color: #fff;
-    background-color:rgb(26, 26, 26);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px; 
+    transition: border-color 0.3s ease;
+}
+
+input:invalid, textarea {
+    border: 2px solid rgb(46, 46, 46);
+}
+  
+input:invalid:required, textarea {
+    background-image: linear-gradient(to right, rgba(116, 116, 116, 0.61), rgb(0, 0, 0));
+}
+  
+input:valid {
+    border: 2px solid rgb(255, 255, 255);
 }
